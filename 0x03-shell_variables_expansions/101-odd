@@ -1,2 +1,2 @@
 #!/bin/bash
-sed ;
+ls -1 | sed n\;g | sed /^$/d
