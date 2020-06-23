@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# Tells a story with each /etc/password entry
+# connects each part of /etc/password
 
 IFS=':'
 while read -r user pass uid gid username_f homedir loginshell; do
