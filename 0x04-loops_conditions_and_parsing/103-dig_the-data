@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+# Displays the IP/stat code
 
 awk '{ printf "%s %s\n", $1, $9 }' "apache-access.log" | sort | uniq -c | sort -nr
