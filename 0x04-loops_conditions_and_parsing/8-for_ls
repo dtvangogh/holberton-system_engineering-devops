@@ -1,7 +1,6 @@
 #!/usr/bin/env bash
 # Displays the contents of cd
 
-LIST="$(ls -1)"
-for i in $LIST; do
+for i in *; do
     echo "$i" | cut -d'-' -f2
 done
