@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Displays bash process
+
+ps afux | grep -e 'bash'

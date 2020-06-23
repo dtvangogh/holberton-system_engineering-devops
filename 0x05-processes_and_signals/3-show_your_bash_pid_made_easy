@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+# Displays the bash PID without ps
+
+pgrep -l bash
