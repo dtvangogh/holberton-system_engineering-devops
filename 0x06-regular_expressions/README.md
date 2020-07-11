@@ -18,5 +18,7 @@
 * This task is brought to you by Holberton mentor Neha Jain, Senior Software Engineer at LinkedIn.
 ### [7. OMG WHY ARE YOU SHOUTING? ](./7-OMG_WHY_ARE_YOU_SHOUTING.rb) 
 * 
+### [8. Textme ](./100-textme.rb) 
+* This exercise was prepared for you by Guillaume Plessis, VP of Infrastructure at TextMe. It is something he uses daily. You can thank Guillaume for his project on Twitter.
 ---
 Created by [DT Van](https://github.com/dtvangogh)
