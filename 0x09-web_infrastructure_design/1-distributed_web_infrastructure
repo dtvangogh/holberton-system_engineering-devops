@@ -1,1 +1,8 @@
 https://photos.google.com/share/AF1QipOVtmiCrmb2GqZRXfcZEDQTXiyGbCweidYNQEeey5nE5hVtQKwEDmMQUvHjMOGkTw?key=WU9JYmZpczBnYW0wNlNiWnl6LTExQzV4SUQ0a0Jn
+
+* 1 load-balancer (HAproxy)
+	* distributes load/requests among the multiple servers using an algorithm focused workload
+
+	shortest time first algorithm is used.
+	all active configuration. all servers are active at one time.
+

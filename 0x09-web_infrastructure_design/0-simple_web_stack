@@ -1,1 +1,33 @@
 https://photos.google.com/share/AF1QipPeqiJUL5gMzFsPY6iDyHTJT2wpLgnsfn-WoMeQ5UH0PQZ9l6TdEA_-n7niMJdCmA?key=eURjM1BOeU1yUGxidUd2Y3p5WnFBcVc5Rm5ha2h3
+
+* What is a server
+   * A piece of hardware or software that provides functionality to clients.  client server model.
+   Provide various functionality like sharing data or performing computation for a client.   A single
+   server can serve multiple clients, and a single client can use multiple servers.
+   * A web server is a software that delivers web pages. A server is an actual computer.
+* What is the role of the domain name
+   * Domain names serve to identify Internet resources, such as computers, networks, and services, with a
+    text-based label that is easier to memorize than the numerical addresses used in the Internet protocols.
+* What type of DNS record www is in www.foobar.com
+   * The use of www.website.com gives you the opportunity to use a CNAME for www that points to your CDN,
+    while leaving the required NS and SOA records on website.com. The website.com record will usually also
+	have an A record to point to a host that will redirect to www.website.com using an HTTP redirect.
+* What is the role of the web server
+   * On the hardware side, a web server is a computer that stores web server software and a website's component
+    files (e.g. HTML documents, images, CSS stylesheets, and JavaScript files). It is connected to the Internet
+	and supports physical data interchange with other devices connected to the web.
+   * On the software side, a web server includes several parts that control how web users access hosted files,
+   at minimum an HTTP server. An HTTP server is a piece of software that understands URLs (web addresses) and
+   HTTP (the protocol your browser uses to view webpages). It can be accessed through the domain names
+   * webserver satisfies the client request on the world wide web
+* What is the role of the application server
+   * Just a server specifically designed to run applications such as webapps, data processing, software distribution.
+* What is the role of the database
+   * Holds all permanent data about the website, to be more specific depends on the site, twitter holds users tweets etc, our airbnb had a database to hold many things like reviews users, locations etc.
+* What is the server using to communicate with the computer of the user requesting the website
+   * Depends which server: the web server uses TCP/IP.
+Issues
+* You must be able to explain what the issues are with this infrastructure:
+   * Single point of failure
+   * Downtime when maintenance needed (like deploying new code web server needs to be restarted)
+   * Cannot scale for traffic
