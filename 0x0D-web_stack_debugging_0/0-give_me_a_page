@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# Fix it felix
+apache2ctl start
