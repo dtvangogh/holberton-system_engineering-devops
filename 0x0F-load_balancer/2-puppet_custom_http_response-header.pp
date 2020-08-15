@@ -14,11 +14,6 @@ exec { 'apt-get update':
   command => $command
 }
 
--> file { 'index.html':
-  ensure  => file,
-  path    => '/var/www/html/index.html',
-  content => 'Holberton School is cool'
-}
 -> service { 'nginx':
   ensure  => 'running',
   restart => 'sudo service nginx restart'
