@@ -1,2 +1,15 @@
-#!/usr/bin/python3
-no prototype
+#!/usr/bin/env bash
+# This script configures a web server with a load balancer using HAProxy
+apt-get -y install software-properties-common
+add-apt-repository -y ppa:vbernat/haproxy-1.8
+apt-get -y update
+apt-get -y install haproxy=1.8.\*
+cd /etc/haproxy
+sed -i '37a \\n' haproxy.cfg
+sed -i '38a listen hbnb' haproxy.cfg
+sed -i '39a \\tbind *:80' haproxy.cfg
+sed -i '40a \\tmode http' haproxy.cfg
+sed -i '41a \\tbalance roundrobin' haproxy.cfg
+sed -i '42a \\tserver 1661-web-01 54.235.58.144:80 check' haproxy.cfg
+sed -i '43a \\tserver 1661-web-02 34.73.211.9:80 check' haproxy.cfg
+service haproxy restart
