@@ -1,20 +1,25 @@
-# puppet manifest creating a custom HTTP header response
-package { 'nginx':
-  ensure => installed,
+# ccustom header using puppet
+$update = '/usr/bin/env apt-get -y update'
+$command = "/usr/bin/env sed -i '14a add_header X-Served-By ${hostname};' /etc/nginx/nginx.conf"
+
+exec { 'apt-get update':
+  command => $update
 }
 
-file_line { 'header':
-  ensure => 'present',
-  path   => '/etc/nginx/sites-available/default',
-  after  => 'listen 80 default_server;',
-  line   => 'add_header X-Served-By $hostname;'
+-> package { 'nginx':
+  ensure   => 'installed'
 }
 
-file { '/usr/share/nginx/html/index.html':
-  content => 'Holberton School',
+-> exec { 'custom HTTP header':
+  command => $command
 }
 
-service { 'nginx':
-  ensure  => running,
-  require => Package['nginx'],
+-> file { 'index.html':
+  ensure  => file,
+  path    => '/var/www/html/index.html',
+  content => 'Holberton School is cool'
+}
+-> service { 'nginx':
+  ensure  => 'running',
+  restart => 'sudo service nginx restart'
 }
