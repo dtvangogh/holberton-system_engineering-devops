@@ -1,6 +1,6 @@
 # ccustom header using puppet
 $update = '/usr/bin/env apt-get -y update'
-$command = "/usr/bin/env sed -i '14a add_header X-Served-By ${hostname};' /etc/nginx/nginx.conf"
+$customHeader = "/usr/bin/env sed -i '14a add_header X-Served-By ${hostname};' /etc/nginx/nginx.conf"
 
 exec { 'apt-get update':
   command => $update
@@ -11,7 +11,7 @@ exec { 'apt-get update':
 }
 
 -> exec { 'custom HTTP header':
-  command => $command
+  command => $customHeader
 }
 
 -> service { 'nginx':
