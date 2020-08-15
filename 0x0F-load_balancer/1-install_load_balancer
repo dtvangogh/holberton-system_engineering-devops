@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 # configure HAproxy
 
-sudo sed -i 's/ENABLED=0/ENABLED=1/' /etc/default/haproxy
-sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.cfg.original
-sudo sed -i "$ a\listen webapp 0.0.0.0:80\n\tmode http\n\tbalance roundrobin\n\toption httpclose\n\toption forwardfor\n\tserver 1661-web-01 34.74.167.155:80 check\n\tserver 1661-web-02 34.73.211.9:80 check" /etc/haproxy/haproxy.cfg
-sudo service haproxy start
+sudo sed -i 's/defaults/listen webs\n   bind :80\n   balance roundrobin\n   server 1661-web-01 54.235.58.144:80 check\n   server 1661-web-02 34.73.211.9:80 check\n\ndefaults/g' /etc/haproxy/haproxy.cfg
+sudo systemctl restart haproxy
