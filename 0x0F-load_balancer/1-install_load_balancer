@@ -1,5 +1,12 @@
 #!/usr/bin/env bash
-# configure HAproxy
+# Installs HAproxy and configures load share
 
-sudo sed -i 's/defaults/listen webs\n   bind :80\n   balance roundrobin\n   server 1661-web-01 54.235.58.144:80 check\n   server 1661-web-02 34.73.211.9:80 check\n\ndefaults/g' /etc/haproxy/haproxy.cfg
-sudo systemctl restart haproxy
+sudo apt-get update
+sudo apt-get install -y haproxy=1.5\*
+sudo cp /etc/default/haproxy /etc/default/haproxy.bak
+sudo cp /etc/haproxy/haproxy.cfg /etc/haproxy/haproxy.bak
+sudo sed -i "s/ENABLED=0/ENABLED=1/" /etc/default/haproxy
+config="frontend web-frontend\n\tbind *:80\n\tmode http\n\tdefault_backend web-backend\n\nbackend web-backend\n\tbalance roundrobin\n\tmode http\n\toption forwardfor\n\tserver 1661-web-01 54.235.58.144:80 check\n\tserver 1661-web-02 34.73.211.9:80 check\n"
+echo -e $config | tee -a /etc/haproxy/haproxy.cfg
+sudo service haproxy reload
+sudo service haproxy restart
