@@ -1,2 +1,5 @@
-#!/usr/bin/python3
-no prototype
+#!/usr/bin/env bash
+# replace 8080 with 80
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+sudo service nginx restart
+rm /run/nginx.pid
