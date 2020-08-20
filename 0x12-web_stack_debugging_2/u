@@ -1,0 +1,7 @@
+root@ubuntu:~# whoami
+root
+root@ubuntu:~# ./0-iamsomeoneelse www-data
+www-data
+root@ubuntu:~# whoami
+root
+root@ubuntu:~#
