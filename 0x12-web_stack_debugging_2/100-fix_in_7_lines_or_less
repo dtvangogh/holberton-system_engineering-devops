@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
-# changes server to run nginx as nginx
+# changes root to nginx
 sudo sed -i "s/80/8080/g" /etc/nginx/sites-available/default
 sudo pkill apache2
 sudo chown nginx:nginx /etc/nginx/nginx.conf
