@@ -1,2 +1,10 @@
-#!/usr/bin/python3
-no prototype
+sudo ufw default deny incoming
+sudo ufw allow ssh
+sudo ufw allow 22/tcp
+sudo ufw allow 21/tcp
+sudo ufw allow 80/tcp
+sudo ufw allow ftp
+sudo ufw allow www
+sudo ufw allow 443/tcp
+sudo ufw enable
+
