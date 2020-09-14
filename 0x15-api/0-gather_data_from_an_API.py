@@ -7,8 +7,9 @@ import requests
 from sys import argv
 
 if __name__ == '__main__':
-"""comments are here
-"""
+    """
+    comments here
+    """
     userId = argv[1]
     user = requests.get("https://jsonplaceholder.typicode.com/users/{}".
                         format(userId), verify=False).json()
