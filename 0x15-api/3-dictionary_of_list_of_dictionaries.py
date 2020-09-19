@@ -11,13 +11,13 @@ if __name__ == "__main__":
     """
     Records all tasks that are owned by this employee
     """
-    employees = requests.get("https://jsonplaceholder.typicode.com/users").json()
+    emp = requests.get("https://jsonplaceholder.typicode.com/users").json()
     json_data = {}
-    for employee in employees:
+    for employee in emp:
         employee_data = []
         userId = employee['id']
         tasks = requests.get("https://jsonplaceholder.typicode.com/"
-                                 "todos?userId={}".format(userId)).json()
+                             "todos?userId={}".format(userId)).json()
         for task in tasks:
             task_data = {}
             task_data["task"] = task.get('title')
