@@ -4,7 +4,9 @@ import requests
 
 
 def top_ten(subreddit):
-    """Prints the titles of the top 10 hot posts listed for subreddit passed as argv[2]"""
+    """Prints the titles of the top 10 hot posts listed
+    for subreddit passed as argv[2]
+    """
     user_agent = {'User-agent': 'dtvangogh'}
     req = requests.get(
         "https://www.reddit.com/r/{}/hot/.json?limit=10".format(subreddit),
