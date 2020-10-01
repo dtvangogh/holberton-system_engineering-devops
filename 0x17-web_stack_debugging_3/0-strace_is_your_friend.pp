@@ -7,4 +7,4 @@ exec { 'fix line 137':
 
 service { 'apache2':
   ensure  => 'running'
-} 
+}
