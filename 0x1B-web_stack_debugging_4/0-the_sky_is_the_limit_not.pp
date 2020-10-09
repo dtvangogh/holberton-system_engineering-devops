@@ -3,3 +3,4 @@ $script = "/usr/bin/env sed -i 's/15/4096/g' /etc/default/nginx && /usr/sbin/ser
 
 exec { 'Fix nginx worker limit':
   command => $script 
+}
